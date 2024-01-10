@@ -59,6 +59,12 @@ jobs:
         export PYTHONPATH="../../build/lib/"
         python -c "import sys; print(sys.path)"
         python example_variable_analysis.py
+        
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+       name: OpenSees-ubuntu-build
+       path: build/*        
 #        # Simple MP sanity test
 #        - name: Verification OpenSeesPyMP
 #          run: |
