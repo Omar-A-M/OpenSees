@@ -93,6 +93,12 @@ jobs:
           export PYTHONPATH="../../build/"
           python3 -c "import sys; print(sys.path)"
           python3 example_variable_analysis.py
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+         name: OpenSees-mac-build
+         path: build/*
+
 # Not building on Windows until we can figure out how to use Fortran
 # with Github Actions
     #  build-win32:
